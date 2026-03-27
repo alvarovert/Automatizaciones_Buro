@@ -4,14 +4,14 @@ from pathlib import Path
 from datetime import datetime
 
 # ============ CONFIGURACIÓN - EDITA AQUÍ CON TUS CREDENCIALES ============
-SFTP_HOST = "sssss.ssss.ss.sssss"  # Ej: sftp.empresa.com
-SFTP_USER = "ssssssssss"             # Tu usuario SFTP
-SFTP_PASSWORD = "sssssss"      # Tu contraseña SFTP
-SFTP_PORT = 1111111                       # Puerto SFTP (normalmente 22)
+SFTP_HOST = "secureftp.scotiabank.com.pe"  # Ej: sftp.empresa.com
+SFTP_USER = "usftp310"             # Tu usuario SFTP
+SFTP_PASSWORD = "Ly8tx61oan3J"      # Tu contraseña SFTP
+SFTP_PORT = 22                        # Puerto SFTP (normalmente 22)
 
 # Rutas locales
-CARPETA_LOCAL = r"ssss:\sss\Alvaro Menacho\Documents\sss\sss\FEEDBACKS"
-RUTA_SFTP = "/IN/ssssss"           # Ruta donde se subirá el archivo en el SFTP
+CARPETA_LOCAL = r"C:\Users\Alvaro Menacho\Documents\PYME\FEEDBACK\FEEDBACKS"
+RUTA_SFTP = "/IN/FEEDBACK"           # Ruta donde se subirá el archivo en el SFTP
 
 # =========================================================================
 

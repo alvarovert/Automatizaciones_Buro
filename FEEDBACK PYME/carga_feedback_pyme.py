@@ -87,7 +87,7 @@ class ETLFeedbackPYME:
         
         return df
     
-    def insertar_en_sql_server(self, df, tabla_destino='HISTORICO_FEEDBACK_PYME_ALVARO'):
+    def insertar_en_sql_server(self, df, tabla_destino='HISTORICO_FEEDBACK_PYME'):
         print("\n🚀 Iniciando carga a SQL Server...")
         password_escaped = urllib.parse.quote_plus(self.password)
         
@@ -108,7 +108,7 @@ class ETLFeedbackPYME:
 
     def ejecutar_etl(self):
         print("\n" + "="*70)
-        print("INICIANDO PROCESO ETL - FEEDBACK PYME (VERSIÓN DEFINITIVA)")
+        print("INICIANDO PROCESO ETL - FEEDBACK PYME")
         print("="*70 + "\n")
         
         try:
@@ -129,11 +129,11 @@ class ETLFeedbackPYME:
 # ==================== CONFIGURACIÓN ====================
 if __name__ == "__main__":
     
-    CARPETA_FEEDBACK = r'C:\Users\Alvaro Menacho\Documents\PYME\FEEDBACK'
-    SERVIDOR_SQL = r'ssss.ssss.ssssss.sssss\ssssssss'
-    BASE_DATOS = 'ssssssss'   
-    USUARIO_SQL = 'sssssssss'   
-    CONTRASENA_SQL = 'ssssss'  
+    CARPETA_FEEDBACK = r'C:\Users\Alvaro Menacho\Documents\PYME\FEEDBACK_COMPLETO'
+    SERVIDOR_SQL = r'192.168.7.4\buro'
+    BASE_DATOS = 'Buro_CRM'   
+    USUARIO_SQL = 'vgaldos'   
+    CONTRASENA_SQL = 'Alianza26'  
     
     etl = ETLFeedbackPYME(
         folder_path=CARPETA_FEEDBACK,

@@ -4,10 +4,10 @@ import urllib.parse
 from sqlalchemy import create_engine, text
 
 # ================= CONFIGURACIÓN =================
-SERVER = r'xxxxx.x6x8.xxx.4\xxxx'
-DATABASE = 'xxx'
-USER = 'xxx' 
-PASSWORD = 'xx'
+SERVER = r'192.168.7.4\buro'
+DATABASE = 'Buro_CRM'
+USER = 'vgaldos' 
+PASSWORD = 'Alianza26'
 params = urllib.parse.quote_plus(
     f"DRIVER={{ODBC Driver 18 for SQL Server}};SERVER={SERVER};DATABASE={DATABASE};UID={USER};PWD={PASSWORD};TrustServerCertificate=yes"
 )
@@ -21,7 +21,7 @@ def convert_fecha_format(df):
 
 # Leer archivo CSV
 def load_csv(file_path):
-    df = pd.read_csv(file_path, sep=';')
+    df = pd.read_csv(file_path, sep=',')
     df = convert_fecha_format(df)
     return df
 

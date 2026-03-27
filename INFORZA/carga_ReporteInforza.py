@@ -5,12 +5,12 @@ from datetime import datetime
 import os
 
 # ================= CONFIGURACIÓN =================
-SERVER = r'ssss.sssss.ssss.ss\ssssss'
-DATABASE = 'sssssssss'
-USER = 'sssssssss'      # <<<< CAMBIAR
-PASSWORD = 'ssssssss'     # <<<< CAMBIAR
+SERVER = r'192.168.7.4\buro'
+DATABASE = 'Buro_CRM'
+USER = 'vgaldos'      
+PASSWORD = 'Alianza26'     
 
-BASE_DIR = r'C:\Users\ssssssssss\REPORTES' # <<<< CAMBIAR
+BASE_DIR = r'C:\Users\Alvaro Menacho\Documents\INFORZA\REPORTES' # Ruta donde va a buscar el archivo
 
 # Generación dinámica del nombre del archivo: INFORZA_EFECTIVO_YYYYMM.xlsx
 fecha_actual = datetime.now()
@@ -23,7 +23,7 @@ print(f"--- Iniciando proceso ETL: {datetime.now()} ---")
 print(f"--- Archivo objetivo: {nombre_archivo} ---")
 
 params = urllib.parse.quote_plus(
-    f"DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={SERVER};DATABASE={DATABASE};UID={USER};PWD={PASSWORD}"
+    f"DRIVER={{ODBC Driver 18 for SQL Server}};SERVER={SERVER};DATABASE={DATABASE};UID={USER};PWD={PASSWORD};TrustServerCertificate=yes"
 )
 # fast_executemany=True es VITAL para rendimiento
 engine = create_engine(f"mssql+pyodbc:///?odbc_connect={params}", fast_executemany=True)

@@ -8,11 +8,11 @@ import base64
 import sys
 
 # Configuración
-OUTLOOK_EMAIL = "ss@ssss.s.sssss"
-OUTLOOK_PASSWORD = "ssssss"  # Reemplaza con tu contraseña
-IMAP_SERVER = "sss.sssss.sss.ssss"
-IMAP_PORT = 11111
-DOWNLOAD_FOLDER = r"s:\ss\s sss\sssss\sss\sssss"
+OUTLOOK_EMAIL = "reportes@inforza.com.pe"
+OUTLOOK_PASSWORD = "Bur02o25PE00" 
+IMAP_SERVER = "mail.inforza.com.pe"
+IMAP_PORT = 993
+DOWNLOAD_FOLDER = r"C:\Users\Alvaro Menacho\Documents\INFORZA\REPORTES"
 KEYWORDS = ["Reporte", "INFORZA", "EFECTIVO"]
 
 def conectar_outlook():
@@ -37,7 +37,7 @@ def buscar_correos_recientes(mail):
         
         # Calcular fechas (hoy y hace 2 días)
         hoy = datetime.now()
-        hace_dos_dias = hoy - timedelta(days=2)
+        hace_dos_dias = hoy - timedelta(days=0)
         fecha_inicio = hace_dos_dias.strftime("%d-%b-%Y")
         
         # Buscar correos por criterios: palabras en el asunto y fecha
@@ -55,7 +55,7 @@ def buscar_correos_recientes(mail):
         email_ids = almacenamiento[0].split()
         
         if not email_ids:
-            print(f"✗ No se encontraron correos en los últimos 2 días")
+            print(f"✗ No se encontraron correos en el ultimo día")
             return None
         
         # Filtrar correos que contengan todas las palabras clave en el asunto
@@ -97,6 +97,9 @@ def buscar_correos_recientes(mail):
         print(f"✓ Correo encontrado:")
         print(f"  Asunto: {correo_mas_reciente['asunto']}")
         print(f"  Fecha: {correo_mas_reciente['fecha']}")
+        print(f"  Fecha de inicio: {fecha_inicio}")
+        print(f"  Fecha de hace dos días: {hace_dos_dias}")
+        print(f"  Fecha de Hoy: {hoy}")
         
         return correo_mas_reciente
     
