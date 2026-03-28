@@ -7,34 +7,30 @@ import os
 
 # ==================== CONFIGURACIÓN DE CREDENCIALES ====================
 # Pon aquí tus credenciales
-CORREO_REMITENTE = "reportes@inforza.com.pe"
+CORREO_REMITENTE = "bg-avances2@buro.com.pe"
 CONTRASEÑA = "Bur02o25PE00"  # Reemplaza con tu contraseña o contraseña de aplicación
 
 # Configuración del servidor SMTP
 # Si usas Gmail, usa: smtp.gmail.com , puerto 587
 # Si usas Outlook, usa: smtp-mail.outlook.com , puerto 587
 # Si usas tu correo corporativo de Buro, consulta con tu proveedor IT
-SERVIDOR_SMTP = "mail.inforza.com.pe"  # Reemplaza con el servidor SMTP correcto
+SERVIDOR_SMTP = "mail.buro.com.pe"  # Reemplaza con el servidor SMTP correcto
 PUERTO_SMTP = 587
 
 # ==================== CONTENIDO DEL CORREO ====================
 # ASUNTO: Pon aquí el asunto del correo
-ASUNTO = "TABLERO INFORZA MARZO 2026"
+ASUNTO = "Reporte ACB"
 
 # DESTINATARIOS (TO): Lista de emails que recibirán el correo
 DESTINATARIOS = [
-    "vpinas@buro.com.pe",
-    "wmorochoa.proveedorexterno@inforza.com.pe"
+    "andres.altamirano_ex@scotiabank.com.pe"
 ]
 
 # COPIA (CC): Lista de emails en copia
 COPIA = [
     "vgaldos@buro.com.pe",
     "dhidalgoc@buro.com.pe",
-    "amenachod@buro.com.pe",
-    "fmoya.stbk@buro.com.pe",
-    "inteligencia_n@inforza.com.pe",
-    "control2@inforza.com.pe"
+    "amenachod@buro.com.pe"
 ]
 # COPIA OCULTA (BCC) - Opcional: Los emails aquí no se verán en el correo
 COPIA_OCULTA = [
@@ -43,14 +39,16 @@ COPIA_OCULTA = [
 
 # CUERPO DEL CORREO: Pon aquí el mensaje que quieres enviar
 CUERPO_CORREO = """
-Estimados (as), 
-Les compartimos los “Desembolsos de Créditos en EFECTIVO (PLD) actualizados al día de ayer, P/fv. agradeceremos que con carácter de suma urgencia revisen sus avances (S/.), con el fin de poder confirmarlos
+Buen día,
+Se remite el Reporte ACB Buro en Excel con las solicitudes actualizadas hasta el 26 de Marzo 2026.
 
-Toda operación registrada después del desembolso del crédito (S/.) en el POWER APP de La Financiera y a través de nuestro INFOVENTAS ¡no será reconocida…! 
+Saludos Cordiales,
+Alvaro Menacho
+IC Buro.
 """
 
 # Ruta del archivo adjunto
-RUTA_ARCHIVO_ADJUNTO = r"C:\Users\Alvaro Menacho\Documents\INFORZA\TABLEROS\TABLERO EFECTIVO INFORZA.xlsx"  # Reemplaza con la ruta correcta de tu archivo
+RUTA_ARCHIVO_ADJUNTO = r"C:\Users\Alvaro Menacho\Documents\ACB\Reportes\Reporte_ACB - DIARIO.xlsx"  # Reemplaza con la ruta correcta de tu archivo
 
 # ==================== FUNCIÓN PARA ENVIAR CORREO ====================
 def enviar_correo():
@@ -125,6 +123,6 @@ def enviar_correo():
 # ==================== EJECUCIÓN ====================
 if __name__ == "__main__":
     print("=" * 60)
-    print("ENVIANDO CORREO CON TABLERO DE PRODUCCION INFORZA")
+    print("ENVIANDO CORREO CON TABLERO DE Reporte ACB")
     print("=" * 60)
     enviar_correo()

@@ -32,7 +32,7 @@ DESTINATARIOS = [
 COPIA = [
     "soporte.pyme@buro.com.pe",
     "vgaldos@buro.com.pe",
-    "dhidalgoc@buro.com.pe"
+    "dhidalgoc@buro.com.pe",
     "soporte.ic@buro.com.pe"
 ]
 # COPIA OCULTA (BCC) - Opcional: Los emails aquí no se verán en el correo
@@ -87,7 +87,7 @@ def enviar_correo():
         
         encoders.encode_base64(parte)
         nombre_archivo = os.path.basename(RUTA_ARCHIVO_ADJUNTO)
-        parte.add_header('Content-Disposition', f'attachment; filename= {nombre_archivo}')
+        parte.add_header('Content-Disposition', 'attachment', filename=nombre_archivo)
         mensaje.attach(parte)
         
         # Conectar al servidor SMTP y enviar
